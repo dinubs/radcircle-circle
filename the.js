@@ -27,22 +27,26 @@ for ( var i=0; i<count; i++ ) {
     div.style.backgroundImage = 'url("http://api.randomuser.me/portraits/med/men/'+rand+'.jpg")'
     div.setAttribute("data-person-name", people[i]);
     div.setAttribute("class", "circleChooser");
-  	document.getElementById('wrap').appendChild(div)
+    document.getElementById('wrap').appendChild(div)
 }
 
-	var classname = document.getElementsByClassName("circleChooser");
+  var classname = document.getElementsByClassName("circleChooser");
 
     var myFunction = function() {
         var attribute = this.getAttribute("data-person-name");
         console.log(attribute);
+        $("#content-wrap").html ('<svg class="load-icon"><use class="loader" xlink:href="#radCircle" /></svg>')
+        // Comment out the below lines to just see the loading icon
         $.getJSON( attribute + ".json", function( data ) {
-		  console.log(data);
-		  $("#content-header").html( data.fullName );
-		  $("#content-school").html( data.school );
-		  $("#content-bio").html( data.bio );
-		});
+          console.log(data);
+          $("#content-wrap").html( '<h1 id="content-header"></h1><h3 id="content-school"><h3><p id="content-bio"></p>' );
+          $("#content-header").html( data.fullName );
+          $("#content-school").html( data.school );
+          $("#content-bio").html( data.bio );
+        });
     };
 
     for(var i=0;i<classname.length;i++){
         classname[i].addEventListener('click', myFunction, false);
+        classname[i].addEventListener('mouseover', myFunction, false);
     }

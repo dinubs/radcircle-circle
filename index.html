@@ -22,6 +22,41 @@
 				background-color: #333;
 				background-size: 100% 100%;
 			}
+			.load-icon {
+				width: 25px !important;
+				height: 25px !important;
+			}
+
+			.loader {
+				stroke-dasharray: 50;
+				stroke-dashoffset: 50;
+				stroke-linecap: rounded;
+				-webkit-animation: load 2s infinite linear;
+				-moz-animation: load 2s infinite linear;
+				animation: load 2s infinite linear;
+			}
+
+			@-webkit-keyframes load {
+				from {
+					stroke-dashoffset: 0;
+				} to {
+					stroke-dashoffset: 100;
+				}
+			}
+			@-moz-keyframes load {
+				from {
+					stroke-dashoffset: 0;
+				} to {
+					stroke-dashoffset: 100;
+				}
+			}
+			@keyframes load {
+				from {
+					stroke-dashoffset: 0;
+				} to {
+					stroke-dashoffset: 100;
+				}
+			}
 		</style>
 	</head>
 	<body>
