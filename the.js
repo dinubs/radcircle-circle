@@ -8,8 +8,8 @@ circle = function(radius, steps, centerX, centerY) {
 
       return [xValues, yValues];
     }
-// Change These, and create .json files with names exactly the same as these.
-var people = ["Mohammad", "Gavin", "Mohammad", "Gavin", "Mohammad", "Gavin"]
+// Change These, and create .json files with names exactly the same as the name in the images folder.
+var people = ["aj", "gavin", "aj", "gavin", "aj", "gavin"]
 
 var radius = 200, count = people.length, centerX = document.getElementById('wrap').clientWidth / 2, centerY = document.getElementById('wrap').clientHeight / 2; 
 
@@ -24,7 +24,7 @@ for ( var i=0; i<count; i++ ) {
   var div = document.createElement('div')
     div.style.left = (x-25) + 'px'
     div.style.top = (y-25) + 'px'
-    div.style.backgroundImage = 'url("http://api.randomuser.me/portraits/med/men/'+rand+'.jpg")'
+    div.style.backgroundImage = 'url("images/'+people[i]+'100circle.png")'
     div.setAttribute("data-person-name", people[i]);
     div.setAttribute("class", "circleChooser");
     document.getElementById('wrap').appendChild(div)
